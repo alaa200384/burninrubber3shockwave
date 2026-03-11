@@ -1,11 +1,11 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Burnin' Rubber 3 @Shockwave.com</title>
-
 <style type="text/css">
+<!--
 * {
 	margin:0;
 	padding:0;
@@ -21,17 +21,24 @@ body {
 	font-weight: bold;
 	color: #333333;
 	background-color:#ffffff;
-	background-image: url(/Images/ShockwaveArchiveBackground.png);
+	background-image: url(/Images/ShockwaveArchiveBackground.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+	margin:0;
+	padding:0;
+	text-align:center;
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-size: cover;
-	text-align:center;
 }
+
 
 #wrappergame {
 	width: 816px;
 	margin-left: auto;
 	margin-right: auto;
+	height: auto;
 }
 
 #titlegame {
@@ -62,78 +69,39 @@ body {
 	text-align: center;
 	border: none;
 }
-</style>
 
-<script>
-function getDailyCode() {
-    const d = new Date();
-
-    const year = String(d.getFullYear()).slice(-2);
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-
-    return year + month + day;
+#footer img {
+	float:left;
+	padding-right: 8px;
+	padding-left: 16px;
 }
 
-window.onload = function () {
+#footer a{
+	color:#FFFFFF;
+}
 
-    const code = getDailyCode();
+#footer a:hover{
+	text-decoration: underline;
+}
 
-    document.getElementById("sw1param").value = code;
-    document.getElementById("shockwaveEmbed").setAttribute("sw1", code);
-
-};
-</script>
-
+;
+}
+-->
+</style>
 </head>
-
-<body>
-
 <div style="position:absolute;top:50%;left:50%;width:640px;height:480px;margin-top:-240px;margin-left:-320px;">
-
 <object
 codebase="http://download.macromedia.com/pub/shockwave/cabs/director/sw.cab#version=11,5,0,0"
-ID="start"
-width="100%"
-height="100%"
-VIEWASTEXT>
-
-<param name="src" value="BurninRubber3/BR3Preloader.dcr">
-<param id="sw1param" name="sw1" value="">
-<param name="sw2" value="">
-<param name="sw3" value="">
-<param name="sw8" value="0">
-<param name="sw9" value="burninrubber3">
-
-<param name="swRemote"
-value="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true' ">
-
-<param name="swStretchStyle" value="stage">
-<param name="bgColor" value="#000000">
-<param name="swStretchHAlign" value="Left">
-<param name="swStretchVAlign" value="Top">
-
-<embed
-id="shockwaveEmbed"
-src="BurninRubber3/BR3Preloader.dcr"
-PlayerVersion="11.5"
-bgColor="#000000"
-swStretchHAlign="Left"
-swStretchVAlign="Top"
-width="100%"
-height="100%"
-swRemote="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true'"
-swStretchStyle="stage"
-type="application/x-director"
-pluginspage="http://www.macromedia.com/shockwave/download/"
-sw1=""
-sw2=""
-sw3="">
-</embed>
-
+ID=start width=100% height=100% VIEWASTEXT>
+<param name=src value="BurninRubber3/BR3PreloaderURL.dir">
+<param name=sw1 value="">
+<param name=sw2 value="">
+<param name=sw3 value="">
+<param name=sw8 value="0">
+<param name=sw9 value="burninrubber3">
+<param name=swRemote value="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true' ">
+<param name=swStretchStyle value=stage>
+<PARAM NAME=bgColor VALUE=#000000> <PARAM NAME=swStretchHAlign VALUE=Left> <PARAM NAME=swStretchVAlign VALUE=Top> 
+<embed src="BurninRubber3/BR3PreloaderURL.dir" PlayerVersion="11.5" bgColor=#000000 swStretchHAlign=Left swStretchVAlign=Top  width=100% height=100% swRemote="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true'" swStretchStyle=stage type="application/x-director" pluginspage="http://www.macromedia.com/shockwave/download/" sw1="" sw2="" sw3="">
 </object>
-
 </div>
-
-</body>
-</html>
