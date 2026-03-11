@@ -66,21 +66,30 @@ body {
 
 <script>
 function getDailyCode() {
-    const d = new Date();
 
-    const year = String(d.getFullYear()).slice(-2);
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
+    var d = new Date();
+
+    var year = d.getFullYear().toString().substr(2,2);
+
+    var month = d.getMonth() + 1;
+    if(month < 10) month = "0" + month;
+
+    var day = d.getDate();
+    if(day < 10) day = "0" + day;
 
     return year + month + day;
 }
 
 window.onload = function () {
 
-    const code = getDailyCode();
+    var code = getDailyCode();
 
     document.getElementById("sw1param").value = code;
-    document.getElementById("shockwaveEmbed").setAttribute("sw1", code);
+
+    var embed = document.getElementById("shockwaveEmbed");
+    if(embed){
+        embed.setAttribute("sw1", code);
+    }
 
 };
 </script>
@@ -137,4 +146,5 @@ sw3="">
 
 </body>
 </html>
+
 
