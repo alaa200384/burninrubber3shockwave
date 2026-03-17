@@ -62,6 +62,17 @@ body {
 	text-align: center;
 	border: none;
 }
+
+#colorBox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
 </style>
 
 <script>
@@ -91,12 +102,35 @@ window.onload = function () {
         embed.setAttribute("sw1", code);
     }
 
+window.onload = function () {
+
+    var code = getDailyCode();
+
+    document.getElementById("sw1param").value = code;
+
+    var embed = document.getElementById("shockwaveEmbed");
+    if(embed){
+        embed.setAttribute("sw1", code);
+    }
+
+    // Background Color Picker
+    var picker = document.getElementById("bgColorPicker");
+    picker.addEventListener("input", function() {
+        document.body.style.backgroundColor = this.value;
+        document.body.style.backgroundImage = "none"; // entfernt das Bild
+    });
+};
+
 };
 </script>
 
 </head>
 
 <body>
+
+<div id="colorBox">
+    <input type="color" id="bgColorPicker" value="#ffffff">
+</div>
 
 <div style="position:absolute;top:50%;left:50%;width:640px;height:480px;margin-top:-240px;margin-left:-320px;">
 
