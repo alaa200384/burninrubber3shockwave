@@ -101,26 +101,12 @@ window.onload = function () {
     if(embed){
         embed.setAttribute("sw1", code);
     }
-
-window.onload = function () {
-
-    var code = getDailyCode();
-
-    document.getElementById("sw1param").value = code;
-
-    var embed = document.getElementById("shockwaveEmbed");
-    if(embed){
-        embed.setAttribute("sw1", code);
-    }
-
-    // Background Color Picker
     var picker = document.getElementById("bgColorPicker");
     picker.addEventListener("input", function() {
         document.body.style.backgroundColor = this.value;
         document.body.style.backgroundImage = "none"; // entfernt das Bild
     });
 }
-
 };
 </script>
 
