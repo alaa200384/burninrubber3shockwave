@@ -73,6 +73,11 @@ body {
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     z-index: 9999;
 }
+
+#colorBox select {
+    font-size: 12px;
+    padding: 3px;
+}
 </style>
 
 <script>
@@ -101,11 +106,11 @@ window.onload = function () {
     if(embed){
         embed.setAttribute("sw1", code);
     }
-    var picker = document.getElementById("bgColorPicker");
-    picker.addEventListener("input", function() {
-        document.body.style.backgroundColor = this.value;
-        document.body.style.backgroundImage = "none"; // entfernt das Bild
-    });
+    var select = document.getElementById("bgColorSelect");
+select.addEventListener("change", function() {
+    document.body.style.backgroundColor = this.value;
+    document.body.style.backgroundImage = "none";
+});
 };
 </script>
 
@@ -114,7 +119,12 @@ window.onload = function () {
 <body>
 
 <div id="colorBox">
-    <input type="color" id="bgColorPicker" value="#ffffff">
+    <select id="bgColorSelect">
+    <option value="#ffffff">White</option>
+    <option value="#000000">Black</option>
+    <option value="#1a1a1a">Dark Grey</option>
+    <option value="#0f172a">Dark Blue</option>
+</select>
 </div>
 
 <div style="position:absolute;top:50%;left:50%;width:640px;height:480px;margin-top:-240px;margin-left:-320px;">
