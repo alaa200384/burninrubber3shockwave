@@ -82,9 +82,7 @@ body {
 
 <script>
 function getDailyCode() {
-
     var d = new Date();
-
     var year = d.getFullYear().toString().substr(2,2);
 
     var month = d.getMonth() + 1;
@@ -99,18 +97,26 @@ function getDailyCode() {
 window.onload = function () {
 
     var code = getDailyCode();
-
     document.getElementById("sw1param").value = code;
 
     var embed = document.getElementById("shockwaveEmbed");
     if(embed){
         embed.setAttribute("sw1", code);
     }
+
     var select = document.getElementById("bgColorSelect");
-select.addEventListener("change", function() {
-    document.body.style.backgroundColor = this.value;
-    document.body.style.backgroundImage = "none";
-});
+    var savedColor = localStorage.getItem("bgColor");
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        document.body.style.backgroundImage = "none";
+        select.value = savedColor;
+    }
+
+    select.addEventListener("change", function() {
+        document.body.style.backgroundColor = this.value;
+        document.body.style.backgroundImage = "none";
+        localStorage.setItem("bgColor", this.value);
+    });
 };
 </script>
 
