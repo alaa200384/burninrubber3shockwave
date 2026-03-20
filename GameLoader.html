@@ -88,6 +88,22 @@ function getDailyCode() {
 	return year + month + day;
 }
 
+	document.addEventListener("DOMContentLoaded", function() {
+    var select = document.getElementById("bgColorSelect");
+    var savedColor = localStorage.getItem("bgColor");
+    if(savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        document.body.style.backgroundImage = "none";
+        select.value = savedColor;
+    }
+
+    select.addEventListener("change", function() {
+        document.body.style.backgroundColor = this.value;
+        document.body.style.backgroundImage = "none";
+        localStorage.setItem("bgColor", this.value);
+    });
+});
+
 window.onload = function() {
 	var dailyCode = getDailyCode();
 
