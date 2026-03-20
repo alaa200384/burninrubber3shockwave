@@ -92,11 +92,13 @@ body {
 function getDailyCode() {
     var d = new Date();
     var year = d.getUTCFullYear().toString().slice(-2);
-    var month = d.getUTCMonth() + 1;
-    if(month < 10) month = "0" + month;
-    var day = d.getUTCDate();
-    if(day < 10) day = "0" + day;
-    return year + month + day;
+    var month = (d.getUTCMonth() + 1).toString().padStart(2, "0");
+    var day = d.getUTCDate().toString().padStart(2, "0");
+    var dailyCode = year + month + day;
+    var sw1param = document.getElementById("sw1param");
+    if(sw1param) sw1param.value = dailyCode;
+    var embed = document.getElementById("shockwaveEmbed");
+    if(embed) embed.setAttribute("sw1", dailyCode);
 }
 
 window.onload = function () {
@@ -120,20 +122,6 @@ window.onload = function () {
         document.body.style.backgroundImage = "none";
         localStorage.setItem("bgColor", this.value);
     });
-};
-</script>
-	
-<script>
-window.onload = function () {
-    var d = new Date();
-    var year = d.getUTCFullYear().toString().slice(-2);
-    var month = (d.getUTCMonth() + 1).toString().padStart(2, "0");
-    var day = d.getUTCDate().toString().padStart(2, "0");
-    var dailyCode = year + month + day;
-    var sw1param = document.getElementById("sw1param");
-    if(sw1param) sw1param.value = dailyCode;
-    var embed = document.getElementById("shockwaveEmbed");
-    if(embed) embed.setAttribute("sw1", dailyCode);
 };
 </script>
 
