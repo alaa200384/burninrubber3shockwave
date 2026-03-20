@@ -82,9 +82,9 @@ body {
 <script>
 function getDailyCode() {
 	var d = new Date();
+	var year = d.getUTCFullYear().toString().slice(-2); 
 	var month = padStart((d.getUTCMonth() + 1), 2, "0");
 	var day = padStart(d.getUTCDate(), 2, "0");
-	var day = d.getUTCDate().toString().padStart(2,"0");
 	return year + month + day;
 }
 
